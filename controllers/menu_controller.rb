@@ -15,7 +15,8 @@ class MenuController
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
      puts "5 - View Entry Number"
-     puts "6 - Exit"
+     puts "6 - Delete ALL Entries"
+     puts "7 - Exit"
      print "Enter your selection: "
  
  # #3
@@ -44,6 +45,18 @@ class MenuController
       entry_n_sub
       main_menu
      when 6
+      system "clear"
+      puts "This is not reversable. Are you sure you want to proceed?"
+       reply = gets.chomp
+       if reply.downcase == "yes"
+        @address_book.detonate
+         puts "Completed."
+         main_menu
+        
+       else
+        main_menu
+       end
+     when 7
        puts "Good-bye!"
        exit(0)
      

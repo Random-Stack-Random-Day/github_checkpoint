@@ -212,4 +212,17 @@
        check_entry(entry, "Sussie", "555-555-2036", "sussie@blocmail.com")
       end
      end
+     
+    describe "detonate list" do
+     it "deletes all entries made" do
+      book.add_entry("Donavin","555.555.5555","djdskjd@kjdksds.com")
+      book.add_entry("Donavin","555.555.5555","djdskjd@kjdksds.com")
+      book.add_entry("Donavin","555.555.5555","djdskjd@kjdksds.com")
+      expect(book.entries.size).to eq 3
+      book.detonate
+      expect(book.entries.size).to eq 0
+     end
+    end
+    
+     
 end
